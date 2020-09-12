@@ -6,7 +6,7 @@ Este projeto tem como finalidade ajudar no desenvolvimento em flutter com o pack
 
 O GetX é um gerenciador de estados simples desenvolvido para auxiliar na programação reativa em flutter, ele foi desenvolvido de forma a se assemelhar a utilização do setState nativo do flutter evitando assim a utilização de StreamControllers, StreamBuilder e aquelas milhares de classes.
 
-Podemos utilizar o GetX de 2 formas:
+Recursos Utilizados:
 
 ## GetX<NomeDoController>(builder: (_){ return SeuWidget(); })
   
