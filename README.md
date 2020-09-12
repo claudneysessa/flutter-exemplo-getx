@@ -9,6 +9,14 @@ O GetX é um gerenciador de estados simples desenvolvido para auxiliar na progra
 Podemos utilizar o GetX de 2 formas:
 
 ## GetX<NomeDoController>(builder: (_){ return SeuWidget(); })
+  
+```
+GetX<NomeDoController>(
+  builder: (_){ 
+    return SeuWidget(); 
+  }
+)
+```
 
 ou
 
