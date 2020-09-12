@@ -104,8 +104,8 @@ class _Page6State extends State<Page6> {
                           );
                         },
                         itemBuilder: (context, index) {
-                          return GetX<Page6Controller>(
-                            builder: (_) {
+                          return Obx(
+                            () {
                               return Material(
                                 color: controller.selectedItem.value == (index + 1)
                                     ? Colors.blue[200].withAlpha(100)
