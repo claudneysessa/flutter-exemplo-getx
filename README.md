@@ -4,13 +4,12 @@ Este projeto tem como finalidade ajudar no desenvolvimento em flutter com o pack
 
 ## GetX
 
-This project is a starting point for a Flutter application.
+O GetX é um gerenciador de estados simples desenvolvido para auxiliar na programação reativa em flutter, ele foi desenvolvido de forma a se assemelhar a utilização do setState nativo do flutter evitando assim a utilização de StreamControllers, StreamBuilder e aquelas milhares de classes.
 
-A few resources to get you started if this is your first Flutter project:
+Podemos utilizar o GetX de 2 formas:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## GetX<NomeDoController>(builder: (_){})
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ou
+
+## Obx((){})
