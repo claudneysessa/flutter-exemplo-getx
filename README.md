@@ -8,7 +8,7 @@ O GetX é um gerenciador de estados simples desenvolvido para auxiliar na progra
 
 ## Recursos Utilizados:
 
-O GetX possui vários métodos de trabalhar com o gerenciamento de estados (Ex: GetBuilder, GetX, Obx, MixinBuilder) porém neste exemplo iremos utilizar apenas o GetX e o ObsX.
+O GetX possui vários métodos de trabalhar com o gerenciamento de estados ( Ex: GetBuilder, GetX, Obx, MixinBuilder ) porém neste exemplo iremos utilizar apenas o GetX e o ObsX.
 
 ### GetX<NomeDoController>(builder: (_){ return SeuWidget(); })
   
