@@ -1,6 +1,6 @@
 # Exemplo de Utilização do Package Get - State Manager
 
-A new Flutter project.
+Este projeto tem como finalidade ajudar no desenvolvimento em flutter com o package get apresentando exemplos de utilização do GetX como State Manager.
 
 ## Getting Started
 
