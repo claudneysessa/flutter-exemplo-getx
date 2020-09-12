@@ -2,7 +2,7 @@
 
 Este projeto tem como finalidade ajudar no desenvolvimento em flutter com o package get apresentando exemplos de utilização do GetX como State Manager.
 
-## Getting Started
+## GetX
 
 This project is a starting point for a Flutter application.
 
