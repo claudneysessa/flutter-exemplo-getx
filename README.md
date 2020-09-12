@@ -1,4 +1,4 @@
-# flutter_getx
+# Exemplo de Utilização do Package Get - State Manager
 
 A new Flutter project.
 
