@@ -21,3 +21,9 @@ GetX<NomeDoController>(
 ou
 
 ## Obx((){ return SeuWidget(); })
+
+```
+Obx((){
+  return SeuWidget();
+})
+```
