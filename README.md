@@ -22,11 +22,9 @@ GetX<NomeDoController>(
 )
 ```
 
-ou
-
 ### Obx((){ return SeuWidget(); })
 
-O Obx, é apenas um Widget com StreamSubscription que recebe eventos de mudança de seus filhos.
+O Obx, é apenas um Widget com StreamSubscription que recebe eventos de mudança de seus filhos. Consiste em um Widget com uma função anônima que retorna o seu Widget com o estado alterado.
 
 ```
 Obx((){
