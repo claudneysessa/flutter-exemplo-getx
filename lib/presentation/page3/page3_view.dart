@@ -24,8 +24,9 @@ class _Page3State extends State<Page3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text("GetX: bool"),
+        title: Text("GetX: Show/Hide Password"),
         centerTitle: true,
       ),
       body: Form(
@@ -65,13 +66,13 @@ class _Page3State extends State<Page3> {
                   builder: (_) {
                     return TextFormField(
                       initialValue: "123456",
-                      obscureText: controller.status,
+                      obscureText: !controller.status,
                       decoration: InputDecoration(
                         labelText: "Senha",
                         suffixIcon: Padding(
                           padding: const EdgeInsets.only(right: 8),
                           child: IconButton(
-                            icon: Icon(FontAwesomeIcons.eyeSlash),
+                            icon: controller.status ? Icon(FontAwesomeIcons.eyeSlash) : Icon(FontAwesomeIcons.eye),
                             onPressed: () {
                               controller.setStatus();
                             },

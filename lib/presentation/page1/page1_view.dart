@@ -3,6 +3,10 @@ import 'package:flutter_getx/presentation/page1/page1_controller.dart';
 import 'package:get/get.dart';
 
 class Page1 extends StatefulWidget {
+  final Map<String, dynamic> title;
+
+  const Page1({Key key, this.title}) : super(key: key);
+
   @override
   _Page1State createState() => _Page1State();
 }
@@ -24,8 +28,9 @@ class _Page1State extends State<Page1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text("GetX: String"),
+        title: Text("${widget.title != null ? widget.title["title"] : ""}"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(

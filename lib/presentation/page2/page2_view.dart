@@ -3,6 +3,10 @@ import 'package:flutter_getx/presentation/page2/page2_controller.dart';
 import 'package:get/get.dart';
 
 class Page2 extends StatefulWidget {
+  final Map<String, dynamic> title;
+
+  const Page2({Key key, this.title}) : super(key: key);
+
   @override
   _Page2State createState() => _Page2State();
 }
@@ -24,8 +28,9 @@ class _Page2State extends State<Page2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text("GetX: Contador"),
+        title: Text("${widget.title != null ? widget.title["title"] : ""}"),
         centerTitle: true,
       ),
       body: Center(

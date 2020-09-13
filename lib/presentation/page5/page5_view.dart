@@ -25,6 +25,7 @@ class _Page5State extends State<Page5> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text("GetX: Personal Class"),
         centerTitle: true,

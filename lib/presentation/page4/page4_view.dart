@@ -28,6 +28,7 @@ class _Page4State extends State<Page4> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text("GetX: Map<String,dynamic>"),
         centerTitle: true,
