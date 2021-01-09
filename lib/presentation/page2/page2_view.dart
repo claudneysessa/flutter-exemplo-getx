@@ -1,27 +1,71 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx/presentation/page2/page2_controller.dart';
+import 'package:flutter_getx/application/common/components/default_body.dart';
+import 'package:flutter_getx/presentation/page1/page1_controller.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 class Page2 extends StatefulWidget {
-  final Map<String, dynamic> title;
+  final String title;
+  final bool gerarLog;
 
-  const Page2({Key key, this.title}) : super(key: key);
+  const Page2({
+    Key key,
+    this.title = "PAGE2",
+    this.gerarLog = false,
+  }) : super(key: key);
 
   @override
   _Page2State createState() => _Page2State();
 }
 
 class _Page2State extends State<Page2> {
-  final Page2Controller controller = Page2Controller();
-  TextEditingController textController = TextEditingController();
-
+  String dataHoraAbertura;
   @override
   void initState() {
+    dataHoraAbertura = DateTime.now().toIso8601String();
+    if (widget.gerarLog) {
+      print("initState ${widget.title}");
+    }
     super.initState();
   }
 
   @override
+  void reassemble() {
+    if (widget.gerarLog) {
+      print("reassemble ${widget.title}");
+    }
+    super.reassemble();
+  }
+
+  @override
+  void deactivate() {
+    if (widget.gerarLog) {
+      print("deactivate ${widget.title}");
+    }
+    super.deactivate();
+  }
+
+  @override
+  void dispose() {
+    if (widget.gerarLog) {
+      print("dispose ${widget.title}");
+    }
+    super.dispose();
+  }
+
+  @override
+  void didChangeDependencies() {
+    if (widget.gerarLog) {
+      print("didChangeDependencies ${widget.title}");
+    }
+    super.didChangeDependencies();
+  }
+
+  @override
   void didUpdateWidget(Page2 oldWidget) {
+    if (widget.gerarLog) {
+      print("didUpdateWidget ${widget.title}");
+    }
     super.didUpdateWidget(oldWidget);
   }
 
@@ -30,70 +74,20 @@ class _Page2State extends State<Page2> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text("${widget.title != null ? widget.title["title"] : ""}"),
+        title: Text("${widget.title}"),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(FontAwesomeIcons.infoCircle),
+            onPressed: () {
+              final controller = Get.find<Page1Controller>(tag: "Page1Controller");
+              print(controller.valorTeste);
+            },
+          )
+        ],
       ),
-      body: Center(
-        child: Form(
-          child: Padding(
-            padding: const EdgeInsets.all(30.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                GetX<Page2Controller>(
-                  builder: (_) {
-                    return Container(
-                      padding: EdgeInsets.all(15),
-                      height: 150,
-                      child: AspectRatio(
-                        aspectRatio: 1,
-                        child: CircleAvatar(
-                          child: Text(
-                            controller.contador.toString(),
-                            style: TextStyle(
-                              fontSize: 55,
-                            ),
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: double.infinity,
-                        height: 50,
-                        child: RaisedButton(
-                          shape: new RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(10.0),
-                          ),
-                          color: Colors.blue[400],
-                          onPressed: () {
-                            controller.incContador();
-                          },
-                          child: Text(
-                            "Executar",
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
-        ),
+      body: DefaultBody(
+        title: "${widget.title} - ${dataHoraAbertura}",
       ),
     );
   }

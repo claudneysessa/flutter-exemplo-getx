@@ -1,21 +1,14 @@
-import 'package:get/state_manager.dart';
+import 'package:get/get.dart';
 
 class Page1Controller extends GetxController {
-  RxString _nome = "".obs;
+  String valorTeste;
 
-  get nome {
-    return this._nome.value;
+  Page1Controller() {
+    valorTeste = DateTime.now().toIso8601String();
+    print("$valorTeste : Create Page1Controller");
   }
 
-  set nome(value) {
-    this._nome.value = value;
-  }
-
-  void setNome(String value) {
-    this.nome = value;
-  }
-
-  void clearNome() {
-    this.nome = "";
+  void dispose() {
+    print("${DateTime.now().toIso8601String()} : dispose Page1Controller");
   }
 }

@@ -1,4 +1,6 @@
+import 'package:flutter_getx/application/common/functions/conversion.dart';
 import 'package:flutter_getx/presentation/home/home_view.dart';
+import 'package:flutter_getx/presentation/page1/page1_binding.dart';
 import 'package:flutter_getx/presentation/page1/page1_view.dart';
 import 'package:flutter_getx/presentation/page2/page2_view.dart';
 import 'package:flutter_getx/presentation/page3/page3_view.dart';
@@ -16,31 +18,37 @@ class AppPages {
     GetPage(
       name: Routes.HOME,
       page: () => HomeView(),
-      transition: Transition.leftToRight,
+      transition: Transition.fadeIn,
     ),
     GetPage(
       name: Routes.PAGE1,
       page: () => Page1(
-        title: Get.arguments,
+        title: (Get.parameters.length == 0) ? "PAGE1" : Get.parameters["title"].toString(),
+        gerarLog: (Get.parameters.length == 0)
+            ? true
+            : (Get.parameters["gerarLog"].toLowerCase() == "true")
+                ? true
+                : false,
       ),
-      transition: Transition.leftToRight,
+      bindings: [
+        Page1Binding(),
+      ],
+      transition: Transition.fadeIn,
     ),
     GetPage(
       name: Routes.PAGE2,
-      page: () => Page2(
-        title: Get.arguments,
-      ),
-      transition: Transition.rightToLeft,
+      page: () => Page2(),
+      transition: Transition.fadeIn,
     ),
     GetPage(
       name: Routes.PAGE3,
       page: () => Page3(),
-      transition: Transition.upToDown,
+      transition: Transition.fadeIn,
     ),
     GetPage(
       name: Routes.PAGE4,
       page: () => Page4(),
-      transition: Transition.topLevel,
+      transition: Transition.fadeIn,
     ),
     GetPage(
       name: Routes.PAGE5,
@@ -50,7 +58,7 @@ class AppPages {
     GetPage(
       name: Routes.PAGE6,
       page: () => Page6(),
-      transition: Transition.fade,
+      transition: Transition.fadeIn,
     ),
   ];
 }
