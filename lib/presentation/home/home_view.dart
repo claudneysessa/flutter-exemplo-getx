@@ -19,13 +19,13 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   @override
   void initState() {
-    print("criar ${widget.title}");
+    print("************************criar ${widget.title}");
     super.initState();
   }
 
   @override
   void dispose() {
-    print("destruir ${widget.title}");
+    print("************************destruir ${widget.title}");
     super.dispose();
   }
 

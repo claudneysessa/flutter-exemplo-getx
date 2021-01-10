@@ -11,4 +11,10 @@ class Page1Controller extends GetxController {
   void dispose() {
     print("${DateTime.now().toIso8601String()} : dispose Page1Controller");
   }
+
+  @override
+  onClose() {
+    print("$valorTeste : onClose Page1Controller");
+    super.onClose();
+  }
 }

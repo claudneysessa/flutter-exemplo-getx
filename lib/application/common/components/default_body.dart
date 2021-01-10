@@ -35,12 +35,6 @@ class DefaultBody extends StatelessWidget {
             },
           ),
           CustomButtom(
-            title: "PAGE1 - Dynamic urls links",
-            navigation: () {
-              Get.toNamed("page1?title=PAGE1 With Dynamic Links&gerarLog=true");
-            },
-          ),
-          CustomButtom(
             title: "PAGE2",
             navigation: () {
               Get.toNamed(Routes.PAGE2);
@@ -55,19 +49,26 @@ class DefaultBody extends StatelessWidget {
           CustomButtom(
             title: "PAGE4",
             navigation: () {
-              Get.offAndToNamed(Routes.PAGE4);
+              Get.toNamed(Routes.PAGE4);
             },
           ),
           CustomButtom(
             title: "PAGE5",
             navigation: () {
-              Get.offAllNamed(Routes.PAGE5);
+              Get.toNamed(Routes.PAGE5);
             },
           ),
           CustomButtom(
             title: "PAGE6",
             navigation: () {
-              Get.offNamed(Routes.PAGE6);
+              Get.toNamed(Routes.PAGE6);
+            },
+          ),
+          CustomButtom(
+            title: "SAIR",
+            navigation: () {
+              // Get.offNamedUntil(Routes.HOME, (route) => Get.currentRoute == Routes.HOME);
+              Get.until((route) => Get.currentRoute == Routes.HOME);
             },
           ),
         ],
