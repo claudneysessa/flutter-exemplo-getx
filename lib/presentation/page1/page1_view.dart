@@ -131,22 +131,58 @@ class _Page1State extends State<Page1> with RouteAware {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            DefaultBody(
+              title: "${widget.title} - ${dataHoraAbertura}",
+            ),
             CustomButtom(
-              title: "PAGE6",
+              title: "Executar",
               navigation: () {
                 controller.valorTeste = DateTime.now().toIso8601String();
               },
             ),
+            Divider(),
             Obx(
               () {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(controller.valorTeste),
+                  child: Text("Obx: ${controller.valorTeste}"),
                 );
               },
             ),
-            DefaultBody(
-              title: "${widget.title} - ${dataHoraAbertura}",
+            GetX<Page1Controller>(
+              builder: (value) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("GetX (Sem init): ${value.valorTeste}"),
+                );
+              },
+            ),
+            GetX<Page1Controller>(
+              init: Page1Controller(),
+              builder: (value) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("GetX (Create): ${value.valorTeste}"),
+                );
+              },
+            ),
+            GetX<Page1Controller>(
+              init: controller,
+              builder: (value) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("GetX (Instância): ${value.valorTeste}"),
+                );
+              },
+            ),
+            GetX<Page1Controller>(
+              init: Get.find<Page1Controller>(),
+              builder: (value) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("GetX (Get.find): ${value.valorTeste}"),
+                );
+              },
             ),
           ],
         ),

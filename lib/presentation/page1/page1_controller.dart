@@ -7,6 +7,7 @@ class Page1Controller extends GetxController {
   set valorTeste(value) => _valorTeste.value = value;
 
   Page1Controller() {
+    valorTeste = DateTime.now().toIso8601String();
     print("$valorTeste : Create Page1Controller");
   }
 
@@ -15,8 +16,14 @@ class Page1Controller extends GetxController {
   }
 
   @override
+  onInit() {
+    print("${DateTime.now().toIso8601String()} : onInit Page1Controller");
+    super.onClose();
+  }
+
+  @override
   onClose() {
-    print("$valorTeste : onClose Page1Controller");
+    print("${DateTime.now().toIso8601String()} : onClose Page1Controller");
     super.onClose();
   }
 }

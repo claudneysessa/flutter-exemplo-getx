@@ -17,10 +17,10 @@ class _ApplicationWidgetState extends State<ApplicationWidget> {
     return GetMaterialApp(
       title: "Exemplo de Utilização do Get",
       debugShowCheckedModeBanner: false,
-      initialRoute: AppPages.INITIAL,
-      getPages: AppPages.routes,
       navigatorKey: Get.key,
       navigatorObservers: [routeObserver],
+      getPages: AppPages.routes,
+      initialRoute: AppPages.INITIAL,
       enableLog: true,
       opaqueRoute: Get.isOpaqueRouteDefault,
       popGesture: Get.isPopGestureEnable,

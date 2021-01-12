@@ -1,7 +1,10 @@
 import 'package:get/get.dart';
 
 class Page5Controller extends GetxController {
-  String valorTeste;
+  final _valorTeste = ''.obs;
+
+  get valorTeste => _valorTeste.value;
+  set valorTeste(value) => _valorTeste.value = value;
 
   Page5Controller() {
     valorTeste = DateTime.now().toIso8601String();
@@ -13,8 +16,14 @@ class Page5Controller extends GetxController {
   }
 
   @override
+  onInit() {
+    print("${DateTime.now().toIso8601String()} : onInit Page5Controller");
+    super.onClose();
+  }
+
+  @override
   onClose() {
-    print("$valorTeste : onClose Page5Controller");
+    print("${DateTime.now().toIso8601String()} : onClose Page5Controller");
     super.onClose();
   }
 }
