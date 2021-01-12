@@ -1,10 +1,12 @@
 import 'package:get/get.dart';
 
 class Page1Controller extends GetxController {
-  String valorTeste;
+  final _valorTeste = ''.obs;
+
+  get valorTeste => _valorTeste.value;
+  set valorTeste(value) => _valorTeste.value = value;
 
   Page1Controller() {
-    valorTeste = DateTime.now().toIso8601String();
     print("$valorTeste : Create Page1Controller");
   }
 

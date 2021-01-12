@@ -19,8 +19,13 @@ class _ApplicationWidgetState extends State<ApplicationWidget> {
       debugShowCheckedModeBanner: false,
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
+      navigatorKey: Get.key,
       navigatorObservers: [routeObserver],
       enableLog: true,
+      opaqueRoute: Get.isOpaqueRouteDefault,
+      popGesture: Get.isPopGestureEnable,
+      defaultGlobalState: Get.defaultGlobalState,
+      defaultTransition: Transition.fadeIn,
       initialBinding: ApplicationBinding(),
     );
   }

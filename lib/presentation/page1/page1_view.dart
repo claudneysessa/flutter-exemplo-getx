@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_getx/application/common/components/custom_buttom.dart';
 import 'package:flutter_getx/application/common/components/default_body.dart';
 import 'package:flutter_getx/presentation/page1/page1_controller.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -20,7 +23,8 @@ class Page1 extends StatefulWidget {
 
 class _Page1State extends State<Page1> with RouteAware {
   String dataHoraAbertura;
-  final controller = Get.find<Page1Controller>(tag: "Page1Controller");
+  // Worker worker;
+  final controller = Get.find<Page1Controller>();
 
   @override
   void initState() {
@@ -28,6 +32,14 @@ class _Page1State extends State<Page1> with RouteAware {
     if (widget.gerarLog) {
       print("${DateTime.now().toIso8601String()} : ${widget.title} (StatefullWidget) -> initState");
     }
+
+    // worker = ever(
+    //   controller.valorTeste,
+    //   (_) {
+    //     print("interval $_");
+    //   },
+    // );
+
     super.initState();
   }
 
@@ -53,6 +65,7 @@ class _Page1State extends State<Page1> with RouteAware {
       print("${DateTime.now().toIso8601String()} : ${widget.title} (StatefullWidget) -> dispose");
     }
     Get.find<RouteObserver>().unsubscribe(this);
+    // worker.dispose();
     super.dispose();
   }
 
@@ -109,14 +122,34 @@ class _Page1State extends State<Page1> with RouteAware {
           IconButton(
             icon: Icon(FontAwesomeIcons.infoCircle),
             onPressed: () {
-              final controller = Get.find<Page1Controller>(tag: "Page1Controller");
+              final controller = Get.find<Page1Controller>();
               print(controller.valorTeste);
             },
           )
         ],
       ),
-      body: DefaultBody(
-        title: "${widget.title} - ${dataHoraAbertura}",
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            CustomButtom(
+              title: "PAGE6",
+              navigation: () {
+                controller.valorTeste = DateTime.now().toIso8601String();
+              },
+            ),
+            Obx(
+              () {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(controller.valorTeste),
+                );
+              },
+            ),
+            DefaultBody(
+              title: "${widget.title} - ${dataHoraAbertura}",
+            ),
+          ],
+        ),
       ),
     );
   }

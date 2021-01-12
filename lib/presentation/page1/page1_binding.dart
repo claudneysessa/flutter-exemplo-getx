@@ -10,7 +10,6 @@ class Page1Binding implements Bindings {
 
     Get.put<Page1Controller>(
       Page1Controller(),
-      tag: "Page1Controller",
       permanent: false,
     );
 
