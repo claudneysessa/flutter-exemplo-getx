@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_getx/application/common/components/custom_buttom.dart';
 import 'package:flutter_getx/application/common/components/default_body.dart';
@@ -132,7 +130,7 @@ class _Page1State extends State<Page1> with RouteAware {
         child: Column(
           children: [
             DefaultBody(
-              title: "${widget.title} - ${dataHoraAbertura}",
+              title: "${widget.title} - $dataHoraAbertura",
             ),
             CustomButtom(
               title: "Executar",

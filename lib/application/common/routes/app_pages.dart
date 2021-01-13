@@ -1,4 +1,3 @@
-import 'package:flutter_getx/application/common/functions/conversion.dart';
 import 'package:flutter_getx/presentation/home/home_view.dart';
 import 'package:flutter_getx/presentation/page1/page1_binding.dart';
 import 'package:flutter_getx/presentation/page1/page1_view.dart';

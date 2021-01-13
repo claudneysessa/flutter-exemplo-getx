@@ -116,7 +116,7 @@ class _Page6State extends State<Page6> with RouteAware {
         ],
       ),
       body: DefaultBody(
-        title: "${widget.title} - ${dataHoraAbertura}",
+        title: "${widget.title} - $dataHoraAbertura",
       ),
     );
   }
